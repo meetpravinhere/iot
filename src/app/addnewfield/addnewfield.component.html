@@ -1,0 +1,151 @@
+<div class="newfield" style="border:1px solid pink; margin:20px; padding:20px;">
+  <form #newField="ngForm" (ngSubmit)="addnewfield()">
+
+    <div class="form-group row">
+      <label for="inputname" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="name" required [(ngModel)]="fieldModel.name"
+         placeholder="Field Name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputdesc" class="col-sm-2 col-form-label">Description</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="desc" required [(ngModel)]="fieldModel.description"
+        placeholder="Description">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputdesc" class="col-sm-2 col-form-label">Sensor 1</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" [disabled]="!chksensor1.checked"  name="sensor1" required [(ngModel)]="fieldModel.sensor1"
+        placeholder="Sensor name 1">
+      </div>
+      <div class="col-sm-4">
+        <input class="form-check-input mt-3" #chksensor1 type="checkbox" name="chksensor1" [(ngModel)]="fieldModel.chksensor1">
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputdesc" class="col-sm-2 col-form-label">Sensor 2</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" [disabled]="!chksensor2.checked" name="sensor2" required [(ngModel)]="fieldModel.sensor2"
+        placeholder="Sensor name 2">
+      </div>
+      <div class="col-sm-4">
+        <input class="form-check-input mt-3" type="checkbox" #chksensor2 name="chksersor2" [(ngModel)]="fieldModel.chksensor2">
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputdesc" class="col-sm-2 col-form-label">Sensor 3</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" [disabled]="!chksensor3.checked" name="sensor3" required [(ngModel)]="fieldModel.sensor3"
+        placeholder="Sensor name 3">
+      </div>
+      <div class="col-sm-4">
+        <input class="form-check-input mt-3" type="checkbox" #chksensor3 name="chkSensor3" [(ngModel)]="fieldModel.chksensor3">
+       </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputdesc" class="col-sm-2 col-form-label">Sensor 4</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" [disabled]="!chksensor4.checked" name="sensor4" required [(ngModel)]="fieldModel.sensor4"
+        placeholder="Sensor name 4">
+      </div>
+      <div class="col-sm-4">
+        <input class="form-check-input mt-3" type="checkbox" #chksensor4 name="chksensor4" [(ngModel)]="fieldModel.chksensor4">
+       </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputdesc" class="col-sm-2 col-form-label">Sensor 5</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" [disabled]="!chksensor5.checked" name="sensor5" required [(ngModel)]="fieldModel.sensor5"
+        placeholder="Sensor name 5">
+      </div>
+      <div class="col-sm-4">
+        <input class="form-check-input mt-3" type="checkbox" #chksensor5 name="chksensor5" [(ngModel)]="fieldModel.chksensor5">
+       </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputdesc" class="col-sm-2 col-form-label">Motor</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" [disabled]="!chkmotor.checked" name="motor" required [(ngModel)]="fieldModel.motor"
+        placeholder="Motor name ">
+      </div>
+      <div class="col-sm-4">
+        <input class="form-check-input mt-3" type="checkbox" #chkmotor name="chkmotor" [(ngModel)]="fieldModel.chkmotor">
+       </div>
+    </div>
+
+    <!-- <div class="form-group row">
+      <div class="col-sm-2">Temprature</div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="chkhumi">
+        </div>
+      </div>
+
+      <div class="col-sm-2">Humidity</div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck1">
+        </div>
+      </div>
+
+      <div class="col-sm-2">Moisture</div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck1">
+        </div>
+      </div>
+    </div> -->
+<!--
+    <div class="form-group row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="chktemp" [(ngModel)]="fieldModel.temprature">
+          <label class="form-check-label" for="gridCheck1">
+            Temprature
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="chkhumi" [(ngModel)]="fieldModel.humidity">
+          <label class="form-check-label" for="gridCheck1">
+            Humidity
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="chkmois" [(ngModel)]="fieldModel.moisture">
+          <label class="form-check-label" for="gridCheck1">
+            Moisture
+          </label>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="form-group row mt-3">
+      <div class="col-sm-10" style="padding-left: 20%;">
+        <button type="submit" class="btn btn-primary">Save Field</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,100 @@
+<div style="margin-left: 5%;">
+  <div class="form-group">
+    <div style="text-align: center;"><h4> Field Information  </h4>   </div>
+  </div>
+<div class="row">
+  <label  class="col-sm-2 col-form-label">Field ID :</label>
+  <div class="col-sm-10">
+    <label class="col-sm-2 col-form-label">{{fieldInfo[0].fieldid}}</label>
+  </div>
+</div>
+<div class="row">
+  <label  class="col-sm-2 col-form-label">Field Name :</label>
+  <div class="col-sm-10">
+    <label class="col-sm-2 col-form-label">{{fieldInfo[0].name}}</label>
+  </div>
+</div>
+<div class="row">
+  <label  class="col-sm-2 col-form-label">Description :</label>
+  <div class="col-sm-10">
+    <label class="col-sm-2 col-form-label">{{fieldInfo[0].description}}</label>
+  </div>
+</div>
+
+<div class="row">
+  <label  class="col-sm-2 col-form-label">Motor :</label>
+  <div class="col-sm-10">
+    <div class="custom-control custom-switch" style="margin-left: 16px">
+      <input type="checkbox" class="custom-control-input" id="customSwitch1" (change)="checkValue($event)">
+      <label class="custom-control-label" for="customSwitch1"></label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <label  class="col-sm-2 col-form-label">Add widgets :</label>
+  <div class="col-sm-10">
+    <select class="detailsOption" (change)="showModal()" data-toggle="modal" data-target="#myModal">
+      <option >Line Chart</option>
+      <option >Guage</option>
+    </select>
+
+  </div>
+</div>
+
+</div>
+
+<!-- <div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" (click)="showModal()">
+  Open modal
+</button>
+</div> -->
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog" style="width: 80%;">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" (click)="hideModal()">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" >
+        <svg width="700" height="350"></svg>
+        <!-- <div id="power-gauge"></div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-danger" (click)="hideModal()">Close</button>
+
+        <!-- this button is hidden, used to close from typescript -->
+        <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<table class="table table-striped" style="width: 80%; margin-left: 5%;">
+  <thead>
+  <tr>
+    <th scope="col">Parameters</th>
+    <th scope="col">Value</th>
+    <th scope="col">Modified Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let IField of fieldDetails;">
+    <td>{{ IField.sensorname}}</td>
+    <td>
+
+      <label id='{{IField.fieldid}}{{IField.sensorname}}'>0</label>
+    </td>
+    <td>{{IField.createdDate}}</td>
+
+  </tr>
+  </tbody>
+</table>

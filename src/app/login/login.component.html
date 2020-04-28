@@ -1,0 +1,36 @@
+<div class="login-form ">
+  <form #userlogin = "ngForm" (ngSubmit) = "signin()" >
+      <h2 class="text-center">Sign in</h2>
+      <hr>
+      <div class="form-group">
+              <input type="text" #name="ngModel" [class.is-invalid]="name.invalid && name.touched"
+              class="form-control" name="username" placeholder="Username" required [(ngModel)]= "userModel.email">
+              <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+      </div>
+
+
+      <div class="form-group">
+              <input type="password" #password="ngModel" [class.is-invalid]="password.touched && password.invalid"
+              class="form-control" name="password" placeholder="Password" required [(ngModel)]="userModel.password">
+              <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small>
+      </div>
+
+      <div class="or-seperator"><i>or</i></div>
+
+      <div class="text-center social-btn">
+          <!-- <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
+          <a href="#" class="btn btn-info btn-block"><i class="fa fa-twitter"></i> Sign in with <b>Twitter</b></a> -->
+          <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
+      </div>
+
+      <div class="form-group">
+          <button type="submit" [disabled]="userlogin.form.invalid" class="btn btn-success btn-block login-btn">Sign in</button>
+      </div>
+      <div class="clearfix">
+          <label class="pull-left checkbox-inline" style="padding-right: 10%;"><input type="checkbox"> Remember me</label>
+          <a href="#" class="pull-right text-success">Forgot Password?</a>
+      </div>
+
+  </form>
+  <div class="hint-text small">Don't have an account? <a href="#" class="text-success">Register Now!</a></div>
+</div>

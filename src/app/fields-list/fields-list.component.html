@@ -1,0 +1,38 @@
+<div  class="mt-2">
+  <button class="btn btn-success" (click)="addnewfield()">Add New Field</button>
+</div>
+<div class="mt-2">
+
+<div class="card-deck mt-2">
+<!-- <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Field 1</div>
+  <div class="card-body">
+    <p class="card-text">Temprature: <span id="lblTemprature">0</span></p>
+    <p class="card-text">Humidity  : <span id="lblHumidity">0</span></p>
+    <p class="card-text">Moisture  : <span id="lblMoisture">0</span></p>
+
+  </div>
+</div>
+ -->
+
+<table class="table table-striped" style="width: 80%; margin-left: 5%;">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Field ID</th>
+    <th scope="col">Field Name</th>
+    <th scope="col">Created Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let field of allFields;  index as i" (click)="onUpdate(field)">
+    <th scope="row">{{ i + 1 }}</th>
+    <td> {{ field.fieldid }} </td>
+    <td>
+      {{ field.name }}
+    </td>
+    <td>{{ field.createdDate}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
